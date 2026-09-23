@@ -9,56 +9,60 @@ redirect_from:
 
 {% include base_path %}
 
+Research Interests
+======
+**Human-Centric AI Communication**: Building AI that perceives human nuance and truly communicates by integrating Multi-Modal LLMs, Multimodal Emotion Reasoning, and Visual Speech Recognition.
+
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
-
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* **KAIST**, Daejeon, Korea — Mar. 2023 – Present
+  * Ph.D. Candidate in Electrical Engineering
+  * Advisor: Prof. Yong Man Ro
+  * Integrated Vision Language Lab (IVLLab)
+* **Yonsei University**, Seoul, Korea — Feb. 2017 – Feb. 2023
+  * B.S. in Electrical and Electronic Engineering
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
+<small>(* denotes equal contribution)</small>
+
+{% assign pubs = site.publications | where_exp: "item", "item.category != 'patents'" | sort: "date" | reverse %}
+{% assign prev_year = "" %}
+{% for post in pubs %}
+{% assign year = post.date | date: "%Y" %}
+{% if year != prev_year %}
+{% if prev_year != "" %}</ul>{% endif %}
+<h3>{{ year }}</h3>
+<ul>
+{% assign prev_year = year %}
+{% endif %}
+{% include archive-single-cv.html %}
+{% endfor %}
+</ul>
+
+Patents
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
+<ul>
+{% assign pats = site.publications | where: "category", "patents" | sort: "date" | reverse %}
+{% for post in pats %}
+  {% include archive-single-cv.html %}
+{% endfor %}
+</ul>
+
+Reviewer Activities
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
+* International Journal
+  * IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)
+  * IEEE Transactions on Image Processing (TIP)
+* International Conference
+  * Association for the Advancement of Artificial Intelligence (AAAI)
+
+Skills
 ======
-* Currently signed in to 43 different slack teams
+* **Programming**: Python, PyTorch
+* **Languages**: Korean (Native), English
+
+Awards & Honors
+======
+* **KAIST Fellowship**, 2024 – Present
+* **National Government Fellowship**, 2023 – 2024

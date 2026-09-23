@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+<a href="{{ base_path }}/files/CV_HyeongseopRha.pdf" class="btn btn--info"><i class="fas fa-file-pdf"></i> Download CV (PDF)</a>
+
 Research Interests
 ======
 **Human-Centric AI Communication**: Building AI that perceives human nuance and truly communicates by integrating Multi-Modal LLMs, Multimodal Emotion Reasoning, and Visual Speech Recognition.

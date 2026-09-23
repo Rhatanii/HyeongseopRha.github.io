@@ -1,0 +1,146 @@
+% CV of Hyeongseop Rha. Build: latexmk -pdf cv.tex   (pdflatex, TeX Live 2022+)
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,left=0.55in,right=0.55in,top=0.45in,bottom=0.5in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\definecolor{rulegray}{gray}{0.70}
+\definecolor{metagray}{gray}{0.40}
+
+% Section: uppercase bold title with a thin gray rule underneath
+\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[{\color{rulegray}\titlerule[0.8pt]}]
+\titlespacing*{\section}{0pt}{2.2ex}{1.4ex}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{1.6ex}{0.8ex}
+
+\setlist[itemize]{label=-, leftmargin=1.6em, nosep, itemsep=1pt, topsep=1pt}
+
+% \entry{title}{date}{subtitle}{location}
+\newcommand{\entry}[4]{%
+  \needspace{3\baselineskip}%
+  \textbf{#1}\hfill{\color{metagray}#2}\par
+  \textit{#3}\hfill{\color{metagray}#4}\par
+}
+% \lineentry{title}{date}
+\newcommand{\lineentry}[2]{\textbf{#1}\hfill{\color{metagray}#2}\par}
+% \pub{title}{authors}{venue}
+\newcommand{\pub}[3]{%
+  \begin{minipage}{\textwidth}
+  {\hyphenpenalty=10000 \exhyphenpenalty=10000 \emergencystretch=2em \textbf{#1}\par}
+  \begin{itemize}
+    \item #2
+    \item #3
+  \end{itemize}
+  \end{minipage}\par\vspace{5pt}
+}
+\newcommand{\me}{\textbf{Hyeongseop Rha}}
+\newcommand{\cvlink}[2]{\href{#1}{\underline{#2}}}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{22}{26}\selectfont\bfseries Hyeongseop Rha}\\[7pt]
+  \faEnvelope\ \texttt{ryool\_1832@kaist.ac.kr}
+  \ $|$ \ \faGraduationCap\ \cvlink{https://scholar.google.com/citations?user=9b-wwycAAAAJ}{Google Scholar}
+  \ $|$ \ \faGithub\ \cvlink{https://github.com/Rhatanii}{GitHub}
+  \ $|$ \ \faHome\ \cvlink{https://sites.google.com/view/hyeongseop-rha}{Homepage}
+  % TODO: add LinkedIn, e.g.  \ $|$ \ \faLinkedin\ \cvlink{https://www.linkedin.com/in/<id>}{LinkedIn}
+\end{center}
+
+\section{Research Interests}
+\textbf{Human-Centric AI Communication}: Building AI that perceives human nuance and truly communicates by \textbf{integrating Multi-Modal LLMs}, \textbf{Multimodal Emotion Reasoning}, and \textbf{Visual Speech Recognition}.
+
+\section{Education}
+\entry{KAIST}{Mar. 2023 -- Present}{Ph.D. Candidate in Electrical Engineering}{Daejeon, Korea}
+\begin{itemize}
+  \item Advisor: Prof. Yong Man Ro
+  \item Integrated Vision Language Lab (IVLLab)
+\end{itemize}
+\vspace{5pt}
+\entry{Yonsei University}{Feb. 2017 -- Feb. 2023}{B.S. in Electrical and Electronic Engineering}{Seoul, Korea}
+
+\section{Publications}
+{\small (* denotes equal contribution)}
+
+\subsection{2026}
+\pub{Emotion-Coherent Reasoning for Multimodal LLMs via Emotional Rationale Verifier}
+    {\me, Jeonghun Yeo, Yeonju Kim, and Yong Man Ro}
+    {The Association for the Advancement of Artificial Intelligence (\textbf{AAAI}), 2026}
+\pub{Decoding Strategies for Diffusion-Based ASR: A Systematic Evaluation of Confidence-Based Thresholding}
+    {Jeonghun Yeo, Minsu Kim, \me, and Yong Man Ro}
+    {Conference on Empirical Methods in Natural Language Processing (\textbf{EMNLP}), 2026}
+\pub{Diffusion Large Language Models for Visual Speech Recognition}
+    {Jeonghun Yeo, Chae Won Kim, \me, and Yong Man Ro}
+    {Conference on Empirical Methods in Natural Language Processing (\textbf{EMNLP}), 2026}
+\pub{TMT: Tri-Modal Translation between Speech, Image, and Text by Processing Different Modalities as Different Languages}
+    {Minsu Kim, Jee-weon Jung, \me, Soumi Maiti, Siddhant Arora, Xuankai Chang, Shinji Watanabe, and Yong Man Ro}
+    {IEEE Transactions on Multimedia (\textbf{IEEE TMM}), 2026}
+
+\subsection{2025}
+\pub{MMS-LLaMA: Efficient LLM-based Audio-Visual Speech Recognition with Minimal Multimodal Speech Tokens}
+    {Jeonghun Yeo*, \me*, Se Jin Park, and Yong Man Ro}
+    {Proceedings of the Annual Meeting of the Association for Computational Linguistics (\textbf{ACL Findings}), 2025}
+\pub{Personalized Lip Reading: Adapting to Your Unique Lip Movements with Vision and Language}
+    {Jeonghun Yeo, Chae Won Kim, Hyunjun Kim, \me, Seunghee Han, Wen-Huang Cheng, and Yong Man Ro}
+    {The Association for the Advancement of Artificial Intelligence (\textbf{AAAI}), 2025}
+\pub{Learning What to Attend First: Modality-Importance-Guided Reasoning for Reliable Multimodal Emotion Understanding}
+    {\me, Jeonghun Yeo, Junil Won, Se Jin Park, and Yong Man Ro}
+    {arXiv Preprint, 2025}
+\pub{Towards Inclusive Communication: A Unified Framework for Generating Spoken Language from Sign, Lip, and Audio}
+    {Jeonghun Yeo, \me, Sungjune Park, Junil Won, and Yong Man Ro}
+    {arXiv Preprint, 2025}
+
+\subsection{2024}
+\pub{Let's Go Real Talk: Spoken Dialogue Model for Face-to-Face Conversation}
+    {Se Jin Park*, Chae Won Kim*, \me, Minsu Kim, Joanna Hong, Jeonghun Yeo, and Yong Man Ro}
+    {Proceedings of the Annual Meeting of the Association for Computational Linguistics (\textbf{ACL Oral}), 2024}
+\pub{Efficient Multilingual Visual Speech Recognition by Modeling Discretized Visual Speech Units}
+    {Minsu Kim*, Jeonghun Yeo*, Se Jin Park, \me, and Yong Man Ro}
+    {The Association for Computing Machinery's Annual Conference on Multimedia (\textbf{ACMMM}), 2024}
+\pub{AV-EmoDialog: Chat with Audio-Visual Users Leveraging Emotional Cues}
+    {Se Jin Park, Yeonju Kim, \me, Bella Godiva, and Yong Man Ro}
+    {arXiv Preprint, 2024}
+
+\subsection{2022}
+\pub{Digestive Organ Recognition in Video Capsule Endoscopy Based on Temporal Segmentation Network}
+    {Yejee Shin, Taejoon Eo, \me, Dong Jun Oh, Geonhui Son, Jiwoong An, You Jin Kim, Dosik Hwang, and Yun Jeong Lim}
+    {International Conference on Medical Image Computing and Computer-Assisted Intervention (\textbf{MICCAI}), 2022}
+
+\section{Patents}
+\pub{Neural Network-Based Medical Image Processing Apparatus and Method}
+    {Hong Young Jeong, Yun Jeong Lim, Tae Joon Eo, Do Sik Hwang, Geon Hui Son, Ye Jee Shin, \textbf{Hyeong Seop Rha}, and Ji Woong An}
+    {US Patent Application 18/992,843, 2026}
+
+\section{Reviewer Activities}
+\textbf{International Journal}
+\begin{itemize}
+  \item IEEE Transactions on Circuits and Systems for Video Technology (\textbf{TCSVT})
+  \item IEEE Transactions on Image Processing (\textbf{TIP})
+\end{itemize}
+\vspace{5pt}
+\textbf{International Conference}
+\begin{itemize}
+  \item Association for the Advancement of Artificial Intelligence (\textbf{AAAI})
+\end{itemize}
+
+\section{Skills}
+\textbf{Programming} : Python, PyTorch\\
+\textbf{Languages} : Korean (Native), English
+
+\section{Awards \& Honors}
+\lineentry{KAIST Fellowship}{2024 -- Present}
+\vspace{2pt}
+\lineentry{National Government Fellowship}{2023 -- 2024}
+
+\end{document}
